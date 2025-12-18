@@ -1,63 +1,123 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-	background-image: url(fdc-vador.jpg) ;
-	color: #f5f5f5;
-	font-family: 'Segoe UI', Arial, sans-serif;
-	margin: auto;
-	min-height: 100vh;
+    /* Fond clair avec un léger dégradé */
+    background-color: #f8f9fa;
+    background-image: radial-gradient(#dee2e6 0.5px, transparent 0.5px);
+    background-size: 20px 20px; /* Petit motif de points discret */
+    color: #333;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    margin: 0;
+    padding-top: 100px;
 }
 
-h1, h2 {
-	color: #fff;
-	text-align: center;
-	margin-top: 20px;
+/* Menu de navigation style "Flottant" */
+.filter-menu {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;          /* Elle prendra 95% de la largeur de l'écran */
+    max-width: 1000px;    /* Mais elle ne dépassera jamais 1200px pour rester élégante */
+    display: flex;       /* Pour centrer le contenu à l'intérieur */
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px); /* Effet de flou derrière le menu */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    border-radius: 50px;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
-ul {
-	list-style: none;
-	padding: 0;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 20px;
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
 }
 
-li {
-	margin: 10px 0;
+.nav-links a {
+    color: #555;
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
-a {
-	display: block;
-	background: #222;
-	color: #27A9F5;
-	text-decoration: none;
-	padding: 18px 32px;
-	border-radius: 18px;
-	box-shadow: 0 2px 12px rgba(0,0,0,0.3);
-	font-size: 1.2em;
-	font-weight: 500;
-	transition: background 0.2s, color 0.2s, transform 0.2s;
-	border: 2px solid #27A9F5;
+.nav-links a:hover {
+    background-color: #27A9F5;
+    color: white;
 }
 
-a:hover {
-	background: #27A9F5;
-	color: #111;
-	transform: translateY(-3px) scale(1.04);
-	border-color: #fff;
+/* Contenu */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* Pour les sections */
-h2 {
-	margin-bottom: 10px;
-	color: #27A9F5;
-}
-
-/* Pour le titre principal */
 h1 {
-	font-size: 2.5em;
-	letter-spacing: 2px;
-	color: #fff;
-	margin-bottom: 10px;
-
+    text-align: center;
+    font-size: 2.2rem;
+    color: #1a1a1a;
+    margin-bottom: 60px;
 }
 
+h2 {
+    font-size: 1.4rem;
+    color: #27A9F5;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 10px;
+}
+
+section {
+    margin-bottom: 60px;
+}
+
+/* Grille de TP */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+/* Cartes TP version claire */
+.grid a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    background: white;
+    color: #444;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 500;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    transition: all 0.2s ease-in-out;
+}
+
+.grid a:hover {
+    border-color: #27A9F5;
+    color: #27A9F5;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(39, 169, 245, 0.15);
+}
+
+/* Responsive pour mobile */
+@media (max-width: 600px) {
+    .nav-links {
+        gap: 2px;
+    }
+    .nav-links a {
+        padding: 6px 10px;
+        font-size: 0.75rem;
+    }
+}
