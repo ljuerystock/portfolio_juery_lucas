@@ -23,7 +23,7 @@ body {
     max-width: 1000px;    /* Mais elle ne dépassera jamais 1200px pour rester élégante */
     display: flex;       /* Pour centrer le contenu à l'intérieur */
     justify-content: center;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 255);
     backdrop-filter: blur(10px); /* Effet de flou derrière le menu */
     border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 10px 20px;
@@ -122,4 +122,5 @@ section {
     }
 
 }
+
 
