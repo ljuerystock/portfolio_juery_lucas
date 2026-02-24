@@ -20,7 +20,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: 95%;          /* Elle prendra +95% de la largeur de l'écran */
-    max-width: 1100px;    /* Mais elle ne dépassera jamais 1200px pour rester élégante */
+    max-width: 1000px;    /* Mais elle ne dépassera jamais 1200px pour rester élégante */
     display: flex;       /* Pour centrer le contenu à l'intérieur */
     justify-content: center;
     background: rgba(255, 255, 255, 255);
@@ -122,6 +122,7 @@ section {
     }
 
 }
+
 
 
 
