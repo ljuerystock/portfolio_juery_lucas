@@ -22,7 +22,7 @@ body {
     
     /* 1. Élargir la barre */
     width: 95%;           /* Elle prend presque toute la largeur */
-    max-width: 1400px;    /* Augmente cette valeur (ex: 1400px ou 'none') pour qu'elle s'allonge plus */
+    max-width: 1200px;    /* Augmente cette valeur (ex: 1400px ou 'none') pour qu'elle s'allonge plus */
     
     display: flex;
     
@@ -135,6 +135,7 @@ section {
     }
 
 }
+
 
 
 
