@@ -19,17 +19,30 @@ body {
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: 95%;          /* Elle prendra +95% de la largeur de l'écran */
-    max-width: 1000px;    /* Mais elle ne dépassera jamais 1200px pour rester élégante */
-    display: flex;       /* Pour centrer le contenu à l'intérieur */
-    justify-content: center;
-    background: rgba(255, 255, 255, 255);
-    backdrop-filter: blur(10px); /* Effet de flou derrière le menu */
+    
+    /* 1. Élargir la barre */
+    width: 95%;           /* Elle prend presque toute la largeur */
+    max-width: 1400px;    /* Augmente cette valeur (ex: 1400px ou 'none') pour qu'elle s'allonge plus */
+    
+    display: flex;
+    
+    /* 2. Bien répartir le texte */
+    justify-content: space-between; /* Écarte les éléments pour occuper toute la barre */
+    align-items: center;            /* Centre le texte verticalement */
+    gap: 20px;                      /* Ajoute de l'espace garanti entre chaque mot/lien */
+    
+    /* 3. Style visuel (déjà très bien) */
+    background: rgba(255, 255, 255, 1); /* Garde l'opacité à 1 pour bien voir le texte */
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 10px 20px;
+    padding: 10px 30px;             /* J'ai augmenté un peu le padding sur les côtés */
     border-radius: 50px;
     z-index: 1000;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+    /* 4. Sécurité pour le texte */
+    white-space: nowrap;  /* Empêche le texte de se couper sur deux lignes */
+    overflow-x: auto;     /* Permet de scroller horizontalement si l'écran est trop petit */
 }
 
 .nav-links {
@@ -122,6 +135,7 @@ section {
     }
 
 }
+
 
 
 
