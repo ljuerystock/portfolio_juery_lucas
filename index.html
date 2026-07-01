@@ -39,6 +39,11 @@
 
     <main class="container">
 
+        <div id="welcome" class="welcome-panel">
+            <p>&gt; Aucune section chargée.</p>
+            <p>&gt; Ouvrez le menu ci-dessus et sélectionnez une rubrique pour l'afficher.</p>
+        </div>
+
         <section id="html-css_noted" class="folder">
             <h2 class="folder-path"><span class="prompt">$</span> cd ./html-css/notes <span class="cmd">&& ls</span></h2>
             <div class="grid">
@@ -135,6 +140,8 @@
         const menuToggle = document.getElementById('menuToggle');
         const menuWrap = document.getElementById('menuWrap');
         const menuLines = document.querySelectorAll('.crt-line');
+        const welcome = document.getElementById('welcome');
+        const folders = document.querySelectorAll('.folder');
         let menuOpen = false;
 
         function openMenu() {
@@ -155,15 +162,38 @@
             menuToggle.setAttribute('aria-expanded', 'false');
         }
 
+        function showSection(targetId) {
+            const target = document.getElementById(targetId);
+            if (!target) return;
+            welcome.classList.remove('active');
+            folders.forEach(f => f.classList.remove('active'));
+            target.classList.add('active');
+            menuLines.forEach(line => {
+                line.classList.toggle('current', line.getAttribute('href') === '#' + targetId);
+            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
         menuToggle.addEventListener('click', () => {
             menuOpen ? closeMenu() : openMenu();
         });
 
         menuLines.forEach(line => {
-            line.addEventListener('click', () => {
+            line.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = line.getAttribute('href').slice(1);
+                showSection(targetId);
+                history.replaceState(null, '', '#' + targetId);
                 closeMenu();
             });
         });
+
+        const initialHash = window.location.hash.slice(1);
+        if (initialHash && document.getElementById(initialHash)) {
+            showSection(initialHash);
+        } else {
+            welcome.classList.add('active');
+        }
     </script>
 
 </body>
