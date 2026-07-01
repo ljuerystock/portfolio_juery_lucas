@@ -168,6 +168,15 @@ a:focus-visible, button:focus-visible {
     text-shadow: 0 0 10px rgba(79, 255, 110, 0.8);
 }
 
+.crt-line.current {
+    color: #d4ffd8;
+}
+
+.crt-line.current::before {
+    content: "❯ ";
+    color: var(--phosphor);
+}
+
 /* =========================================
    EN-TÊTE — invite de commande
    ========================================= */
@@ -224,8 +233,37 @@ a:focus-visible, button:focus-visible {
     padding: 0 24px 40px;
 }
 
+.welcome-panel {
+    display: none;
+    color: var(--phosphor-dim);
+    font-size: 0.9rem;
+    padding: 20px 0 40px;
+    border-top: 1px dashed var(--phosphor-faint);
+    border-bottom: 1px dashed var(--phosphor-faint);
+    margin-bottom: 40px;
+}
+
+.welcome-panel p + p {
+    margin-top: 8px;
+}
+
+.welcome-panel.active {
+    display: block;
+}
+
 .folder {
+    display: none;
     margin-bottom: 50px;
+    animation: sectionIn 0.25s ease;
+}
+
+.folder.active {
+    display: block;
+}
+
+@keyframes sectionIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .folder-path {
