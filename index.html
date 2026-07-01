@@ -8,22 +8,28 @@
 </head>
 <body>
 
-    <nav class="tab-bar">
-        <div class="tab-bar-inner">
-            <span class="tab-bar-brand">lucas.juery</span>
-            <ul class="tab-links">
-                <li><a href="#html-css_noted">html-css/notés</a></li>
-                <li><a href="#html-css_unnoted">html-css/brouillons</a></li>
-                <li><a href="#js_noted">js/notés</a></li>
-                <li><a href="#js_unnoted">js/brouillons</a></li>
-                <li><a href="#missions">missions</a></li>
-                <li><a href="#sql">sql</a></li>
-                <li><a href="#php">php</a></li>
-                <li><a href="#conception">conception</a></li>
-                <li><a href="#certifs">certifs</a></li>
-            </ul>
+    <header class="crt-topbar">
+        <div class="crt-topbar-inner">
+            <div class="crt-topbar-row">
+                <span class="crt-brand">PORTFOLIO-OS v1.0</span>
+                <span class="crt-status">READY.</span>
+                <button id="menuToggle" class="crt-btn" aria-expanded="false">[ OUVRIR LE MENU ]</button>
+            </div>
+            <nav id="menuWrap" class="crt-menu-wrap">
+                <div class="crt-menu-inner">
+                    <a class="crt-line" href="#html-css_noted">[1] html-css/notés</a>
+                    <a class="crt-line" href="#html-css_unnoted">[2] html-css/brouillons</a>
+                    <a class="crt-line" href="#js_noted">[3] js/notés</a>
+                    <a class="crt-line" href="#js_unnoted">[4] js/brouillons</a>
+                    <a class="crt-line" href="#missions">[5] missions</a>
+                    <a class="crt-line" href="#sql">[6] sql</a>
+                    <a class="crt-line" href="#php">[7] php</a>
+                    <a class="crt-line" href="#conception">[8] conception</a>
+                    <a class="crt-line" href="#certifs">[9] certifs</a>
+                </div>
+            </nav>
         </div>
-    </nav>
+    </header>
 
     <header class="hero">
         <p class="hero-prompt">lucas@portfolio<span class="prompt-sep">:~$</span></p>
@@ -124,6 +130,41 @@
     <footer>
         <p>&copy; 2026 — Juery Lucas — Portfolio BTS SIO</p>
     </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const menuWrap = document.getElementById('menuWrap');
+        const menuLines = document.querySelectorAll('.crt-line');
+        let menuOpen = false;
+
+        function openMenu() {
+            menuOpen = true;
+            menuWrap.style.maxHeight = menuWrap.scrollHeight + 'px';
+            menuLines.forEach((line, i) => {
+                setTimeout(() => line.classList.add('show'), i * 70);
+            });
+            menuToggle.textContent = '[ FERMER LE MENU ]';
+            menuToggle.setAttribute('aria-expanded', 'true');
+        }
+
+        function closeMenu() {
+            menuOpen = false;
+            menuWrap.style.maxHeight = '0px';
+            menuLines.forEach(line => line.classList.remove('show'));
+            menuToggle.textContent = '[ OUVRIR LE MENU ]';
+            menuToggle.setAttribute('aria-expanded', 'false');
+        }
+
+        menuToggle.addEventListener('click', () => {
+            menuOpen ? closeMenu() : openMenu();
+        });
+
+        menuLines.forEach(line => {
+            line.addEventListener('click', () => {
+                closeMenu();
+            });
+        });
+    </script>
 
 </body>
 </html>
