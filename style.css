@@ -1,364 +1,132 @@
-/* =========================================
-   PORTFOLIO LISTING — THÈME "VIEILLE CONSOLE"
-   Écran phosphore vert monochrome, scanlines,
-   menu déroulant façon vieux menu DOS/BBS
-   ========================================= */
-
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap');
-
-:root {
-    --bg: #060a06;
-    --bg-panel: #0a120a;
-    --phosphor: #4fff6e;
-    --phosphor-dim: #2b8f3e;
-    --phosphor-faint: #163d1c;
-    --phosphor-line: rgba(79, 255, 110, 0.25);
-
-    --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
-}
-
+/* --- Paramètres généraux --- */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 body {
-    font-family: var(--font-mono);
-    background-color: var(--bg);
-    color: var(--phosphor);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    min-height: 100vh;
-    position: relative;
-    animation: flicker 6s infinite;
+    background-color: #f4f6f9;
+    color: #333;
 }
 
-/* Scanlines + vignette sur toute la page */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 999;
-    background:
-        repeating-linear-gradient(0deg, rgba(0,0,0,0.22) 0px, rgba(0,0,0,0.22) 1px, transparent 1px, transparent 3px),
-        radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.55) 100%);
-}
-
-@keyframes flicker {
-    0%, 96%, 100% { opacity: 1; }
-    97% { opacity: 0.97; }
-    98% { opacity: 1; }
-    99% { opacity: 0.985; }
-}
-
-::selection {
-    background: var(--phosphor-dim);
-    color: #000;
-}
-
-::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-track { background: var(--bg-panel); }
-::-webkit-scrollbar-thumb { background: var(--phosphor-faint); border-radius: 10px; }
-::-webkit-scrollbar-thumb:hover { background: var(--phosphor-dim); }
-html { scrollbar-color: var(--phosphor-faint) var(--bg-panel); }
-
-a { color: var(--phosphor); }
-
-a:focus-visible, button:focus-visible {
-    outline: 1px solid var(--phosphor);
-    outline-offset: 3px;
-}
-
-/* =========================================
-   BARRE SUPÉRIEURE + MENU DÉROULANT
-   ========================================= */
-
-.crt-topbar {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: var(--bg-panel);
-    border-bottom: 1px solid var(--phosphor-faint);
-    box-shadow: 0 0 0 0.5px var(--phosphor-line);
-}
-
-.crt-topbar-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 24px;
-}
-
-.crt-topbar-row {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 14px 0;
-    flex-wrap: wrap;
-}
-
-.crt-brand {
-    font-size: 12.5px;
-    letter-spacing: 1.5px;
-    color: var(--phosphor);
-    text-shadow: 0 0 6px rgba(79, 255, 110, 0.55);
-}
-
-.crt-status {
-    font-size: 11px;
-    letter-spacing: 1px;
-    color: var(--phosphor-dim);
-    flex: 1;
-}
-
-.crt-btn {
-    background: transparent;
-    border: 1px solid var(--phosphor-dim);
-    color: var(--phosphor);
-    font-family: var(--font-mono);
-    font-size: 12px;
-    padding: 7px 16px;
-    cursor: pointer;
-    text-shadow: 0 0 4px rgba(79, 255, 110, 0.45);
-    transition: all 0.2s ease;
-}
-
-.crt-btn:hover {
-    background: rgba(79, 255, 110, 0.08);
-    border-color: var(--phosphor);
-}
-
-.crt-menu-wrap {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-}
-
-.crt-menu-inner {
-    padding: 6px 0 18px;
-    border-top: 1px dashed var(--phosphor-faint);
-    margin-top: 2px;
-    display: flex;
-    flex-direction: column;
-    gap: 9px;
-}
-
-.crt-line {
-    opacity: 0;
-    transform: translateY(-4px);
-    transition: opacity 0.15s ease, transform 0.15s ease, color 0.15s ease;
-    font-size: 13px;
-    color: var(--phosphor);
-    text-decoration: none;
-    text-shadow: 0 0 5px rgba(79, 255, 110, 0.45);
-    padding-top: 6px;
-}
-
-.crt-line.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.crt-line:hover {
-    color: #d4ffd8;
-    text-shadow: 0 0 10px rgba(79, 255, 110, 0.8);
-}
-
-.crt-line.current {
-    color: #d4ffd8;
-}
-
-.crt-line.current::before {
-    content: "❯ ";
-    color: var(--phosphor);
-}
-
-/* =========================================
-   EN-TÊTE — invite de commande
-   ========================================= */
-
-.hero {
+/* --- Header et Navigation --- */
+header {
+    background-color: #2c3e50;
+    color: #ffffff;
+    padding: 2rem 0;
     text-align: center;
-    padding: 70px 20px 60px;
 }
 
-.hero-prompt {
-    color: var(--phosphor-dim);
-    font-size: 0.95rem;
+header h1 {
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+}
+
+nav ul {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ecf0f1;
+}
+
+/* --- Corps de la page --- */
+main {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 20px;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+h2 {
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 10px;
+    margin-bottom: 1.5rem;
+}
+
+/* --- Grilles et Cartes --- */
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    flex: 1 1 calc(33.333% - 20px);
+    min-width: 250px;
+}
+
+.card h3 {
+    color: #3498db;
+    margin-bottom: 15px;
+}
+
+.card ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+.card li {
     margin-bottom: 8px;
 }
 
-.prompt-sep {
-    color: var(--phosphor-faint);
+/* --- Section Contact & Bouton CV --- */
+.contact-info p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
 }
 
-.hero-title {
-    font-size: clamp(1.6rem, 4vw, 2.4rem);
-    font-weight: 700;
-    color: var(--phosphor);
-    text-shadow: 0 0 10px rgba(79, 255, 110, 0.55);
-    letter-spacing: -0.5px;
-    margin-bottom: 18px;
-}
-
-.cursor {
-    display: inline-block;
-    width: 3px;
-    height: 0.9em;
-    margin-left: 8px;
-    background: var(--phosphor);
-    box-shadow: 0 0 8px rgba(79, 255, 110, 0.7);
-    vertical-align: -0.1em;
-    animation: blink 1.1s steps(2) infinite;
-}
-
-@keyframes blink { 50% { opacity: 0; } }
-
-.hero-desc {
-    color: var(--phosphor-dim);
-    font-size: 1rem;
-}
-
-/* =========================================
-   CONTENU — dossiers
-   ========================================= */
-
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 24px 40px;
-}
-
-.welcome-panel {
-    display: none;
-    color: var(--phosphor-dim);
-    font-size: 0.9rem;
-    padding: 20px 0 40px;
-    border-top: 1px dashed var(--phosphor-faint);
-    border-bottom: 1px dashed var(--phosphor-faint);
-    margin-bottom: 40px;
-}
-
-.welcome-panel p + p {
-    margin-top: 8px;
-}
-
-.welcome-panel.active {
-    display: block;
-}
-
-.folder {
-    display: none;
-    margin-bottom: 50px;
-    animation: sectionIn 0.25s ease;
-}
-
-.folder.active {
-    display: block;
-}
-
-@keyframes sectionIn {
-    from { opacity: 0; transform: translateY(6px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.folder-path {
-    font-size: 1.05rem;
-    font-weight: 500;
-    color: var(--phosphor);
-    margin-bottom: 20px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--phosphor-faint);
-}
-
-.folder-path .prompt {
-    color: var(--phosphor);
-    text-shadow: 0 0 6px rgba(79, 255, 110, 0.5);
-    margin-right: 6px;
-}
-
-.folder-path .cmd {
-    color: var(--phosphor-dim);
-}
-
-/* =========================================
-   GRILLE DE FICHIERS
-   ========================================= */
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 12px;
-}
-
-.file-entry {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-    height: 48px;
-    background: var(--bg-panel);
-    color: var(--phosphor);
+.contact-info a {
+    color: #3498db;
     text-decoration: none;
-    font-size: 0.88rem;
-    font-weight: 500;
-    border-radius: 0;
-    border: 1px solid var(--phosphor-faint);
-    border-left: 3px solid var(--phosphor-faint);
-    transition: all 0.2s ease;
 }
 
-.file-entry::after {
-    content: ".html";
-    color: var(--phosphor-dim);
-    font-size: 0.8em;
+.btn-cv {
+    display: inline-block;
+    background-color: #3498db;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s;
 }
 
-.file-entry.file-pdf::after {
-    content: ".pdf";
+.btn-cv:hover {
+    background-color: #2980b9;
+    color: #ffffff;
 }
 
-.file-entry:hover, .file-entry:focus-visible {
-    background: rgba(79, 255, 110, 0.06);
-    border-left-color: var(--phosphor);
-    color: #d4ffd8;
-    text-shadow: 0 0 6px rgba(79, 255, 110, 0.5);
-}
-
-/* =========================================
-   PIED DE PAGE
-   ========================================= */
-
+/* --- Pied de page --- */
 footer {
     text-align: center;
-    padding: 30px 0 50px;
-    color: var(--phosphor-dim);
-    font-size: 0.78rem;
-}
-
-/* =========================================
-   RESPONSIVE
-   ========================================= */
-
-@media (max-width: 640px) {
-    .crt-topbar-inner { padding: 0 16px; }
-    .crt-brand { font-size: 11px; }
-    .hero { padding: 50px 16px 40px; }
-    .grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
-}
-
-/* =========================================
-   ACCESSIBILITÉ
-   ========================================= */
-
-@media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
+    padding: 20px;
+    background-color: #2c3e50;
+    color: #ffffff;
+    margin-top: 40px;
 }
