@@ -34,23 +34,46 @@
 
     <main class="container">
 
+        <!-- ECRAN D'ACCUEIL AVEC TON IMAGE -->
         <div id="welcome" class="welcome-panel">
-            <p>&gt; Aucune section chargée.</p>
-            <p>&gt; Ouvrez le menu ci-dessus et sélectionnez une rubrique pour l'afficher.</p>
+            <div style="text-align: center; margin-bottom: 20px;">
+                <img src="pcportflio.jpg" alt="Installation Terminal" style="max-width: 100%; border: 1px solid var(--phosphor-dim); opacity: 0.8; box-shadow: 0 0 15px rgba(79, 255, 110, 0.2);">
+            </div>
+            <p style="text-align: center; font-weight: bold;">&gt; INITIALISATION DU SYSTÈME RÉUSSIE.</p>
+            <p style="text-align: center;">&gt; Veuillez ouvrir le menu [ EN HAUT ] pour naviguer dans les répertoires.</p>
         </div>
 
+        <!-- SECTION PARCOURS -->
         <section id="parcours" class="folder">
-            <h2 class="folder-path"><span class="prompt">$</span> cat ./parcours.txt</h2>
-            <div style="color: var(--phosphor-dim); padding-left: 10px;">
-                <p><span style="color: var(--phosphor);">></span> <strong>En cours :</strong> BTS SIO (Services Informatiques aux Organisations)</p>
-                <p style="margin-left: 18px; margin-bottom: 12px;">Spécialité SLAM (Solutions Logicielles et Applications Métiers)</p>
+            <h2 class="folder-path"><span class="prompt">$</span> cat /etc/parcours.conf</h2>
+            <div style="color: var(--phosphor); padding: 20px; border: 1px dashed var(--phosphor-dim); background: rgba(79, 255, 110, 0.02);">
+                <pre style="color: var(--phosphor-dim); font-size: 0.7rem; margin-bottom: 20px; line-height: 1.2;">
+ ____  _    ____  ____  ___  _   _ ____  ____  
+|  _ \| \  |  _ \|  _ \/ _ \| | | |  _ \/ ___| 
+| |_) |  \ | |_) | |_) | | | | | | | |_) \___ \ 
+|  __/| |\ |  _ <|  __/| |_| | |_| |  _ < ___) |
+|_|   |_| \_|_| \_\_|   \___/ \___/|_| \_\____/ 
+                </pre>
                 
-                <p><span style="color: var(--phosphor);">></span> <strong>Avant le BTS :</strong> [À Remplacer par ton Bac/Formation]</p>
+                <p><span class="prompt">>></span> <strong>2024 - 2026 | EN COURS</strong></p>
+                <p style="margin-left: 20px; color: var(--phosphor-dim);">BTS SIO (Services Informatiques aux Organisations)</p>
+                <p style="margin-left: 20px; margin-bottom: 20px; color: #d4ffd8;">↳ Spécialité SLAM (Solutions Logicielles et Applications Métiers)</p>
+                
+                <p><span class="prompt">>></span> <strong>AVANT LE BTS</strong></p>
+                <p style="margin-left: 20px; color: var(--phosphor-dim);">[Ton Baccalauréat ici] - [Nom de ton Lycée]</p>
             </div>
         </section>
 
+        <!-- SECTION PROJETS -->
         <section id="projets" class="folder">
-            <h2 class="folder-path"><span class="prompt">$</span> cd ./projets <span class="cmd">&& ls</span></h2>
+            <h2 class="folder-path"><span class="prompt">$</span> ls -la ./projets_majeurs</h2>
+            <div style="margin-bottom: 25px; font-family: monospace; font-size: 0.85rem; color: var(--phosphor-dim);">
+                <p>drwxr-xr-x 1 ljuery admin 4096 Jul  4 08:00 <span style="color: #d4ffd8;">mission_9</span>   -> [Site e-commerce Vinyles Rap / PHP-SQL]</p>
+                <p>drwxr-xr-x 1 ljuery admin 4096 Jul  4 08:00 <span style="color: #d4ffd8;">mission_11</span>  -> [Remplacer par description de la mission]</p>
+                <p>drwxr-xr-x 1 ljuery admin 4096 Jul  4 08:00 <span style="color: #d4ffd8;">biblio_tp</span>   -> [Remplacer par description du projet]</p>
+            </div>
+            
+            <p style="margin-bottom: 15px; color: var(--phosphor);">> Lancer les exécutables :</p>
             <div class="grid">
                 <a class="file-entry" href="https://ljuerystock.github.io/mission9_ljuery/" target="_blank">mission_9</a>
                 <a class="file-entry" href="https://ljuerystock.github.io/mission11_ljuery/" target="_blank">mission_11</a>
@@ -58,21 +81,45 @@
             </div>
         </section>
 
+        <!-- SECTION COMPÉTENCES -->
         <section id="competences" class="folder">
-            <h2 class="folder-path"><span class="prompt">$</span> cat ./competences.log</h2>
-            <div style="color: var(--phosphor-dim); padding-left: 10px;">
-                <p style="margin-bottom: 8px;"><span style="color: var(--phosphor);">[+] Certifications :</span> MOOC de la CNIL (L'Atelier RGPD)</p>
-                <p style="margin-bottom: 8px;"><span style="color: var(--phosphor);">[+] Développement :</span> HTML, CSS, JavaScript, PHP, SQL, Java (POO)</p>
-                <p style="margin-bottom: 8px;"><span style="color: var(--phosphor);">[+] Réseau & Cybersécurité :</span> Cisco Packet Tracer, Modèle OSI, Admin Système Linux, Protocoles SSH</p>
-                <p style="margin-bottom: 8px;"><span style="color: var(--phosphor);">[+] Outils & Méthodes :</span> XAMPP, Ampps, StarUML, WordPress, GitHub</p>
+            <h2 class="folder-path"><span class="prompt">$</span> ./scan_system_skills.sh</h2>
+            <div style="color: var(--phosphor); padding: 15px; border-left: 3px solid var(--phosphor-dim);">
+                <p style="color: var(--phosphor-dim); margin-bottom: 20px;">>>> ANALYSE DES MODULES EN COURS...</p>
+                
+                <div style="margin-bottom: 12px;">
+                    <span style="display: inline-block; width: 140px;">[+] HTML/CSS/JS</span>
+                    <span style="color: #d4ffd8;">[██████████████░░]</span>
+                </div>
+                <div style="margin-bottom: 12px;">
+                    <span style="display: inline-block; width: 140px;">[+] PHP/SQL</span>
+                    <span style="color: #d4ffd8;">[████████████░░░░]</span>
+                </div>
+                <div style="margin-bottom: 12px;">
+                    <span style="display: inline-block; width: 140px;">[+] Java (POO)</span>
+                    <span style="color: #d4ffd8;">[██████████░░░░░░]</span>
+                </div>
+                <div style="margin-bottom: 25px;">
+                    <span style="display: inline-block; width: 140px;">[+] Réseau & Sys</span>
+                    <span style="color: #d4ffd8;">[█████████████░░░]</span> <span style="font-size: 0.85rem; color: var(--phosphor-dim);">(Debian, SSH, Packet Tracer)</span>
+                </div>
+                
+                <p style="color: var(--phosphor-dim); margin-bottom: 8px;">>>> DÉPENDANCES ET OUTILS DÉTECTÉS :</p>
+                <p>> ENVIRONNEMENT : XAMPP, Ampps, GitHub</p>
+                <p>> ARCHITECTURE  : Modèle OSI, StarUML, WordPress</p>
+                
+                <p style="color: var(--phosphor-dim); margin-top: 20px; margin-bottom: 8px;">>>> LICENCES :</p>
+                <p>> L'Atelier RGPD (Certification CNIL - Validée)</p>
             </div>
         </section>
 
+        <!-- SECTION CONTACT -->
         <section id="contact" class="folder">
             <h2 class="folder-path"><span class="prompt">$</span> cd ./contact <span class="cmd">&& ls</span></h2>
+            <p style="margin-bottom: 15px; color: var(--phosphor-dim);">> Ping de l'utilisateur ljuery...</p>
             <div class="grid">
-                <a class="file-entry" href="mailto:ljuery0@gmail.com">envoyer_email</a>
-                <a class="file-entry" href="TON_LIEN_LINKEDIN_ICI" target="_blank">linkedin</a>
+                <a class="file-entry" href="mailto:ljuery0@gmail.com">mail_ljuery</a>
+                <a class="file-entry" href="TON_LIEN_LINKEDIN_ICI" target="_blank">profil_linkedin</a>
                 <a class="file-entry file-pdf" href="CV_Lucas_Juery.pdf" download>cv_lucas_juery</a>
             </div>
         </section>
