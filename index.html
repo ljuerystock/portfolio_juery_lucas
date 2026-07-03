@@ -3,198 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Lucas Juery | BTS SIO</title>
-    <link href="style.css" rel="stylesheet">
+    <title>Portfolio - Lucas Juery</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <h1>Lucas Juery</h1>
+        <p>Développeur & Technicien Informatique</p>
+        <nav>
+            <ul>
+                <li><a href="#parcours">Parcours</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <header class="crt-topbar">
-        <div class="crt-topbar-inner">
-            <div class="crt-topbar-row">
-                <span class="crt-brand">PORTFOLIO-OS v1.0</span>
-                <span class="crt-status">READY.</span>
-                <button id="menuToggle" class="crt-btn" aria-expanded="false">[ OUVRIR LE MENU ]</button>
+    <main>
+        <!-- 1. PARCOURS -->
+        <section id="parcours">
+            <h2>1. Parcours</h2>
+            <div class="card">
+                <ul>
+                    <li><strong>En cours :</strong> BTS SIO (Services Informatiques aux Organisations) - Spécialité SLAM (Solutions Logicielles et Applications Métiers)</li>
+                    <li><strong>Avant le BTS :</strong> <em>[Remplace ce texte par ton bac ou ancienne formation]</em></li>
+                </ul>
             </div>
-            <nav id="menuWrap" class="crt-menu-wrap">
-                <div class="crt-menu-inner">
-                    <a class="crt-line" href="#html-css_noted">[1] html-css/notés</a>
-                    <a class="crt-line" href="#html-css_unnoted">[2] html-css/brouillons</a>
-                    <a class="crt-line" href="#js_noted">[3] js/notés</a>
-                    <a class="crt-line" href="#js_unnoted">[4] js/brouillons</a>
-                    <a class="crt-line" href="#missions">[5] missions</a>
-                    <a class="crt-line" href="#sql">[6] sql</a>
-                    <a class="crt-line" href="#php">[7] php</a>
-                    <a class="crt-line" href="#conception">[8] conception</a>
-                    <a class="crt-line" href="#certifs">[9] certifs</a>
+        </section>
+
+        <!-- 2. PROJETS -->
+        <section id="projets">
+            <h2>2. Projets</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Mission 9</h3>
+                    <p><em>[Décris ici ce que tu as fait dans la mission 9 et les technos utilisées]</em></p>
                 </div>
-            </nav>
-        </div>
-    </header>
-
-    <header class="hero">
-        <p class="hero-prompt">ljuery@portfolio<span class="prompt-sep">:~$</span></p>
-        <h1 class="hero-title">./afficher_portfolio.sh<span class="cursor"></span></h1>
-        <p class="hero-desc">// BTS SIO — historique complet de mes TP, missions et certifications</p>
-    </header>
-
-    <main class="container">
-
-        <div id="welcome" class="welcome-panel">
-            <p>&gt; Aucune section chargée.</p>
-            <p>&gt; Ouvrez le menu ci-dessus et sélectionnez une rubrique pour l'afficher.</p>
-        </div>
-
-        <section id="html-css_noted" class="folder">
-            <h2 class="folder-path"><span class="prompt">$</span> cd ./html-css/notes <span class="cmd">&& ls</span></h2>
-            <div class="grid">
-                <a class="file-entry" href="https://ljuerystock.github.io/tp2_ljuery/" target="_blank">tp2</a>
-                <a class="file-entry" href="https://ljuerystock.github.io/TP4_juery_lucas/" target="_blank">tp4</a>
-                <a class="file-entry" href="https://ljuerystock.github.io/tp6_ljuery/" target="_blank">tp6</a>
-                <a class="file-entry" href="https://ljuerystock.github.io/tp8_ljuery/" target="_blank">tp8</a>
+                <div class="card">
+                    <h3>Mission 11</h3>
+                    <p><em>[Décris ici ce que tu as fait dans la mission 11 et les technos utilisées]</em></p>
+                </div>
+                <div class="card">
+                    <h3>Mission Biblio_TP</h3>
+                    <p><em>[Décris ici ce que tu as fait dans Biblio_TP et les technos utilisées]</em></p>
+                </div>
             </div>
         </section>
 
-        <section id="html-css_unnoted" class="folder">
-            <h2 class="folder-path"><span class="prompt">$</span> cd ./html-css/brouillons <span class="cmd">&& ls</span></h2>
+        <!-- 3. COMPÉTENCES -->
+        <section id="competences">
+            <h2>3. Compétences</h2>
             <div class="grid">
-                <a class="file-entry" href="https://ljuerystock.github.io/tp1_ljuery/" target="_blank">tp1</a>
-                <a class="file-entry" href="https://ljuerystock.github.io/TP3_Articles_JUERY_L/" target="_blank">tp3</a>
-                <a class="file-entry" href="https://ljuerystock.github.io/tp5_ljuery/" target="_blank">tp5</a>
-                <a class="file-entry" href="https://ljuerystock.github.io/tp7_ljuery/" target="_blank">tp7</a>
+                <div class="card">
+                    <h3>Développement</h3>
+                    <ul>
+                        <li>HTML, CSS, PHP, SQL, JavaScript</li>
+                        <li>Programmation Orientée Objet (Java)</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Réseau & Cybersécurité</h3>
+                    <ul>
+                        <li>Cisco Packet Tracer, Modèle OSI</li>
+                        <li>Administration système Linux (Debian, SSH)</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Outils & Méthodes</h3>
+                    <ul>
+                        <li>XAMPP, Ampps</li>
+                        <li>WordPress, StarUML, GitHub</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Certifications</h3>
+                    <ul>
+                        <li>L'Atelier RGPD - MOOC de la CNIL</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
-        <section id="js_noted" class="folder">
-            <h2 class="folder-path"><span class="prompt">$</span> cd ./js/notes <span class="cmd">&& ls</span></h2>
-            <div class="grid">
-                <a class="file-entry" href="https://ljuerystock.github.io/tp10_ljuery/" target="_blank">tp10</a>
-                <a class="file-entry" href="https://ljuerystock.github.io/tp12_ljuery/" target="_blank">tp12</a>
-                <a class="file-entry" href="https://ljuerystock.github.io/tp14_ljuery/" target="_blank">tp14</a>
+        <!-- 4. CONTACT -->
+        <section id="contact">
+            <h2>4. Contact</h2>
+            <div class="card contact-info">
+                <p><strong>Email :</strong> <a href="mailto:ljuery0@gmail.com">ljuery0@gmail.com</a></p>
+                <p><strong>LinkedIn :</strong> <a href="LIEN_LINKEDIN_ICI" target="_blank">Mon profil LinkedIn</a></p>
+                <br>
+                <!-- Assure-toi que ton CV s'appelle bien "CV_Lucas_Juery.pdf" et est dans le même dossier -->
+                <a href="CV_Lucas_Juery.pdf" class="btn-cv" download>📄 Télécharger mon CV</a>
             </div>
         </section>
-
-        <section id="js_unnoted" class="folder">
-            <h2 class="folder-path"><span class="prompt">$</span> cd ./js/brouillons <span class="cmd">&& ls</span></h2>
-            <div class="grid">
-                <a class="file-entry" href="https://ljuerystock.github.io/tp9_ljuery/" target="_blank">tp9</a>
-                <a class="file-entry" href="https://ljuerystock.github.io/tp11_ljuery/" target="_blank">tp11</a>
-                <a class="file-entry" href="https://ljuerystock.github.io/tp13_ljuery/" target="_blank">tp13</a>
-                <a class="file-entry" href="https://ljuerystock.github.io/tp15_ljuery/" target="_blank">tp15</a>
-            </div>
-        </section>
-
-        <section id="missions" class="folder">
-            <h2 class="folder-path"><span class="prompt">$</span> cd ./missions <span class="cmd">&& ls</span></h2>
-            <div class="grid">
-                <a class="file-entry" href="https://ljuerystock.github.io/Mission2_Juery_Lucas/" target="_blank">mission_2</a>
-                <a class="file-entry" href="https://ljuerystock.github.io/mission3_ljuery/" target="_blank">mission_3</a>
-                <a class="file-entry file-pdf" href="Mission 4 Juery Lucas - Les environnements d’exploitation.pdf" target="_blank">mission_4</a>
-                <a class="file-entry" href="https://ljuerystock.github.io/mission5_ljuery/" target="_blank">mission_5</a>
-                <a class="file-entry" href="https://ljuerystock.github.io/mission6_ljuery/" target="_blank">mission_6</a>
-                <a class="file-entry" href="https://ljuerystock.github.io/mission9_ljuery/" target="_blank">mission_9</a>
-                <a class="file-entry" href="https://ljuerystock.github.io/mission_10_ljuery-/" target="_blank">mission_10</a>
-                <a class="file-entry" href="https://ljuerystock.github.io/mission11_ljuery/" target="_blank">mission_11</a>
-                <a class="file-entry" href="https://ljuery-centreformation.free.nf/" target="_blank">bdd_cf_s2</a>
-            </div>
-        </section>
-
-        <section id="sql" class="folder">
-            <h2 class="folder-path"><span class="prompt">$</span> cd ./sql <span class="cmd">&& ls</span></h2>
-            <div class="grid">
-                <a class="file-entry" href="https://ljuerystock.github.io/tp1_sql_ljuery/" target="_blank">tp1_sql</a>
-                <a class="file-entry" href="https://ljuerystock.github.io/tp2_sql_ljuery/" target="_blank">tp2_sql</a>
-                <a class="file-entry file-pdf" href="TP3 – Requêtes SQL.pdf" target="_blank">tp3_sql</a>
-            </div>
-        </section>
-
-        <section id="php" class="folder">
-            <h2 class="folder-path"><span class="prompt">$</span> cd ./php <span class="cmd">&& ls</span></h2>
-            <div class="grid">
-                <a class="file-entry" href="https://jerrys-biblio.infinityfree.me/" target="_blank">biblio_tp</a>
-            </div>
-        </section>
-
-        <section id="conception" class="folder">
-            <h2 class="folder-path"><span class="prompt">$</span> cd ./conception <span class="cmd">&& ls</span></h2>
-            <div class="grid">
-                <a class="file-entry" href="https://ljuerystock.github.io/zoo_tp1/" target="_blank">zoo_tp1</a>
-            </div>
-        </section>
-
-        <section id="certifs" class="folder">
-            <h2 class="folder-path"><span class="prompt">$</span> cd ./certifs <span class="cmd">&& ls</span></h2>
-            <div class="grid">
-                <a class="file-entry" href="https://ljuerystock.github.io/certification_n1/" target="_blank">mooc_anssi</a>
-                <a class="file-entry" href="https://ljuerystock.github.io/certification_n2/" target="_blank">ebios_risk</a>
-                <a class="file-entry" href="https://ljuerystock.github.io/certification_n3/" target="_blank">mooc_cnil</a>
-            </div>
-        </section>
-
     </main>
 
     <footer>
-        <p>&copy; 2026 — Juery Lucas — Portfolio BTS SIO</p>
+        <p>&copy; 2026 - Lucas Juery</p>
     </footer>
-
-    <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const menuWrap = document.getElementById('menuWrap');
-        const menuLines = document.querySelectorAll('.crt-line');
-        const welcome = document.getElementById('welcome');
-        const folders = document.querySelectorAll('.folder');
-        let menuOpen = false;
-
-        function openMenu() {
-            menuOpen = true;
-            menuWrap.style.maxHeight = menuWrap.scrollHeight + 'px';
-            menuLines.forEach((line, i) => {
-                setTimeout(() => line.classList.add('show'), i * 70);
-            });
-            menuToggle.textContent = '[ FERMER LE MENU ]';
-            menuToggle.setAttribute('aria-expanded', 'true');
-        }
-
-        function closeMenu() {
-            menuOpen = false;
-            menuWrap.style.maxHeight = '0px';
-            menuLines.forEach(line => line.classList.remove('show'));
-            menuToggle.textContent = '[ OUVRIR LE MENU ]';
-            menuToggle.setAttribute('aria-expanded', 'false');
-        }
-
-        function showSection(targetId) {
-            const target = document.getElementById(targetId);
-            if (!target) return;
-            welcome.classList.remove('active');
-            folders.forEach(f => f.classList.remove('active'));
-            target.classList.add('active');
-            menuLines.forEach(line => {
-                line.classList.toggle('current', line.getAttribute('href') === '#' + targetId);
-            });
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        menuToggle.addEventListener('click', () => {
-            menuOpen ? closeMenu() : openMenu();
-        });
-
-        menuLines.forEach(line => {
-            line.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = line.getAttribute('href').slice(1);
-                showSection(targetId);
-                history.replaceState(null, '', '#' + targetId);
-                closeMenu();
-            });
-        });
-
-        const initialHash = window.location.hash.slice(1);
-        if (initialHash && document.getElementById(initialHash)) {
-            showSection(initialHash);
-        } else {
-            welcome.classList.add('active');
-        }
-    </script>
-
 </body>
 </html>
