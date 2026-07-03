@@ -3,103 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Lucas Juery</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Portfolio Lucas Juery | BTS SIO</title>
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Lucas Juery</h1>
-        <p>Développeur & Technicien Informatique</p>
-        <nav>
-            <ul>
-                <li><a href="#parcours">Parcours</a></li>
-                <li><a href="#projets">Projets</a></li>
-                <li><a href="#competences">Compétences</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+
+    <header class="crt-topbar">
+        <div class="crt-topbar-inner">
+            <div class="crt-topbar-row">
+                <span class="crt-brand">PORTFOLIO-OS v1.0</span>
+                <span class="crt-status">READY.</span>
+                <button id="menuToggle" class="crt-btn" aria-expanded="false">[ OUVRIR LE MENU ]</button>
+            </div>
+            <nav id="menuWrap" class="crt-menu-wrap">
+                <div class="crt-menu-inner">
+                    <a class="crt-line" href="#parcours">[1] parcours</a>
+                    <a class="crt-line" href="#projets">[2] projets</a>
+                    <a class="crt-line" href="#competences">[3] competences</a>
+                    <a class="crt-line" href="#contact">[4] contact</a>
+                </div>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <!-- 1. PARCOURS -->
-        <section id="parcours">
-            <h2>1. Parcours</h2>
-            <div class="card">
-                <ul>
-                    <li><strong>En cours :</strong> BTS SIO (Services Informatiques aux Organisations) - Spécialité SLAM (Solutions Logicielles et Applications Métiers)</li>
-                    <li><strong>Avant le BTS :</strong> <em>[Remplace ce texte par ton bac ou ancienne formation]</em></li>
-                </ul>
+    <header class="hero">
+        <p class="hero-prompt">ljuery@portfolio<span class="prompt-sep">:~$</span></p>
+        <h1 class="hero-title">./afficher_portfolio.sh<span class="cursor"></span></h1>
+        <p class="hero-desc">// BTS SIO — historique ciblé de mes projets et compétences</p>
+    </header>
+
+    <main class="container">
+
+        <div id="welcome" class="welcome-panel">
+            <p>&gt; Aucune section chargée.</p>
+            <p>&gt; Ouvrez le menu ci-dessus et sélectionnez une rubrique pour l'afficher.</p>
+        </div>
+
+        <section id="parcours" class="folder">
+            <h2 class="folder-path"><span class="prompt">$</span> cat ./parcours.txt</h2>
+            <div style="color: var(--phosphor-dim); padding-left: 10px;">
+                <p><span style="color: var(--phosphor);">></span> <strong>En cours :</strong> BTS SIO (Services Informatiques aux Organisations)</p>
+                <p style="margin-left: 18px; margin-bottom: 12px;">Spécialité SLAM (Solutions Logicielles et Applications Métiers)</p>
+                
+                <p><span style="color: var(--phosphor);">></span> <strong>Avant le BTS :</strong> [À Remplacer par ton Bac/Formation]</p>
             </div>
         </section>
 
-        <!-- 2. PROJETS -->
-        <section id="projets">
-            <h2>2. Projets</h2>
+        <section id="projets" class="folder">
+            <h2 class="folder-path"><span class="prompt">$</span> cd ./projets <span class="cmd">&& ls</span></h2>
             <div class="grid">
-                <div class="card">
-                    <h3>Mission 9</h3>
-                    <p><em>[Décris ici ce que tu as fait dans la mission 9 et les technos utilisées]</em></p>
-                </div>
-                <div class="card">
-                    <h3>Mission 11</h3>
-                    <p><em>[Décris ici ce que tu as fait dans la mission 11 et les technos utilisées]</em></p>
-                </div>
-                <div class="card">
-                    <h3>Mission Biblio_TP</h3>
-                    <p><em>[Décris ici ce que tu as fait dans Biblio_TP et les technos utilisées]</em></p>
-                </div>
+                <a class="file-entry" href="https://ljuerystock.github.io/mission9_ljuery/" target="_blank">mission_9</a>
+                <a class="file-entry" href="https://ljuerystock.github.io/mission11_ljuery/" target="_blank">mission_11</a>
+                <a class="file-entry" href="https://jerrys-biblio.infinityfree.me/" target="_blank">biblio_tp</a>
             </div>
         </section>
 
-        <!-- 3. COMPÉTENCES -->
-        <section id="competences">
-            <h2>3. Compétences</h2>
+        <section id="competences" class="folder">
+            <h2 class="folder-path"><span class="prompt">$</span> cat ./competences.log</h2>
+            <div style="color: var(--phosphor-dim); padding-left: 10px;">
+                <p style="margin-bottom: 8px;"><span style="color: var(--phosphor);">[+] Certifications :</span> MOOC de la CNIL (L'Atelier RGPD)</p>
+                <p style="margin-bottom: 8px;"><span style="color: var(--phosphor);">[+] Développement :</span> HTML, CSS, JavaScript, PHP, SQL, Java (POO)</p>
+                <p style="margin-bottom: 8px;"><span style="color: var(--phosphor);">[+] Réseau & Cybersécurité :</span> Cisco Packet Tracer, Modèle OSI, Admin Système Linux, Protocoles SSH</p>
+                <p style="margin-bottom: 8px;"><span style="color: var(--phosphor);">[+] Outils & Méthodes :</span> XAMPP, Ampps, StarUML, WordPress, GitHub</p>
+            </div>
+        </section>
+
+        <section id="contact" class="folder">
+            <h2 class="folder-path"><span class="prompt">$</span> cd ./contact <span class="cmd">&& ls</span></h2>
             <div class="grid">
-                <div class="card">
-                    <h3>Développement</h3>
-                    <ul>
-                        <li>HTML, CSS, PHP, SQL, JavaScript</li>
-                        <li>Programmation Orientée Objet (Java)</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>Réseau & Cybersécurité</h3>
-                    <ul>
-                        <li>Cisco Packet Tracer, Modèle OSI</li>
-                        <li>Administration système Linux (Debian, SSH)</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>Outils & Méthodes</h3>
-                    <ul>
-                        <li>XAMPP, Ampps</li>
-                        <li>WordPress, StarUML, GitHub</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>Certifications</h3>
-                    <ul>
-                        <li>L'Atelier RGPD - MOOC de la CNIL</li>
-                    </ul>
-                </div>
+                <a class="file-entry" href="mailto:ljuery0@gmail.com">envoyer_email</a>
+                <a class="file-entry" href="TON_LIEN_LINKEDIN_ICI" target="_blank">linkedin</a>
+                <a class="file-entry file-pdf" href="CV_Lucas_Juery.pdf" download>cv_lucas_juery</a>
             </div>
         </section>
 
-        <!-- 4. CONTACT -->
-        <section id="contact">
-            <h2>4. Contact</h2>
-            <div class="card contact-info">
-                <p><strong>Email :</strong> <a href="mailto:ljuery0@gmail.com">ljuery0@gmail.com</a></p>
-                <p><strong>LinkedIn :</strong> <a href="LIEN_LINKEDIN_ICI" target="_blank">Mon profil LinkedIn</a></p>
-                <br>
-                <!-- Assure-toi que ton CV s'appelle bien "CV_Lucas_Juery.pdf" et est dans le même dossier -->
-                <a href="CV_Lucas_Juery.pdf" class="btn-cv" download>📄 Télécharger mon CV</a>
-            </div>
-        </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 - Lucas Juery</p>
+        <p>&copy; 2026 — Juery Lucas — Portfolio BTS SIO</p>
     </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const menuWrap = document.getElementById('menuWrap');
+        const menuLines = document.querySelectorAll('.crt-line');
+        const welcome = document.getElementById('welcome');
+        const folders = document.querySelectorAll('.folder');
+        let menuOpen = false;
+
+        function openMenu() {
+            menuOpen = true;
+            menuWrap.style.maxHeight = menuWrap.scrollHeight + 'px';
+            menuLines.forEach((line, i) => {
+                setTimeout(() => line.classList.add('show'), i * 70);
+            });
+            menuToggle.textContent = '[ FERMER LE MENU ]';
+            menuToggle.setAttribute('aria-expanded', 'true');
+        }
+
+        function closeMenu() {
+            menuOpen = false;
+            menuWrap.style.maxHeight = '0px';
+            menuLines.forEach(line => line.classList.remove('show'));
+            menuToggle.textContent = '[ OUVRIR LE MENU ]';
+            menuToggle.setAttribute('aria-expanded', 'false');
+        }
+
+        function showSection(targetId) {
+            const target = document.getElementById(targetId);
+            if (!target) return;
+            welcome.classList.remove('active');
+            folders.forEach(f => f.classList.remove('active'));
+            target.classList.add('active');
+            menuLines.forEach(line => {
+                line.classList.toggle('current', line.getAttribute('href') === '#' + targetId);
+            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        menuToggle.addEventListener('click', () => {
+            menuOpen ? closeMenu() : openMenu();
+        });
+
+        menuLines.forEach(line => {
+            line.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = line.getAttribute('href').slice(1);
+                showSection(targetId);
+                history.replaceState(null, '', '#' + targetId);
+                closeMenu();
+            });
+        });
+
+        const initialHash = window.location.hash.slice(1);
+        if (initialHash && document.getElementById(initialHash)) {
+            showSection(initialHash);
+        } else {
+            welcome.classList.add('active');
+        }
+    </script>
+
 </body>
 </html>
